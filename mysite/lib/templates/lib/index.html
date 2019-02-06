@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>welcome</title>
+</head>
+<body>
+<form action="{% url 'lib:detail' %}" method="post" name="detail">
+    {% csrf_token %}
+<table align="center">
+    <tr align="center">
+        欢迎回来，邱珑泉的私人书店！
+    </tr>
+    <tr align="center">
+        <p><button>进入</button></p>
+    </tr>
+</table>
+    <!--<input type="submit" value="进入">-->
+</form>
+</body>
+</html>
