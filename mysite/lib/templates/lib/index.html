@@ -7,6 +7,9 @@
 <body>
 <form action="{% url 'lib:detail' %}" method="post" name="detail">
     {% csrf_token %}
+<!--    调用views1.py传递过来的值，然后显示-->
+    <p>{{ now }}</p>
+    <p>{{ qiu }}</p>
 <table align="center">
     <tr align="center">
         欢迎回来，邱珑泉的私人书店！

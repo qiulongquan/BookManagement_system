@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'hello.apps.HelloConfig',
+    'polls.apps.PollsConfig',
     'lib.apps.LibConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -107,7 +109,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Asia/Shanghai'
+# [Django]モデルmodels.DateTimeFieldに現在の時間を挿入する方法
+# https://sleepless-se.net/2018/06/09/django%E3%83%A2%E3%83%87%E3%83%ABmodels-datetimefield%E3%81%AB%E7%8F%BE%E5%9C%A8%E3%81%AE%E6%99%82%E9%96%93%E3%82%92%E6%8C%BF%E5%85%A5%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/
+# TIME_ZONE = 'Asia/Shanghai'
+TIME_ZONE = 'Asia/Tokyo'
 
 USE_I18N = True
 
