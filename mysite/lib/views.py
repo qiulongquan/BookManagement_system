@@ -6,6 +6,18 @@ from django.urls import reverse
 from django.utils import timezone
 
 
+def process(request):
+    if request.method == 'POST':
+        if 'button_1' in request.POST:
+            # ボタン1がクリックされた場合の処理
+            print("button_1")
+            return HttpResponseRedirect(reverse('lib:detail'))
+        elif 'button_2' in request.POST:
+            # ボタン2がクリックされた場合の処理
+            print("button_2")
+            return HttpResponseRedirect(reverse('polls:question'))
+
+
 def detail(request):
     book_list = Book.objects.order_by('-pub_date')[:5]
     context = {'book_list': book_list}

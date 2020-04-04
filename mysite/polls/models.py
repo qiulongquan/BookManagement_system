@@ -8,13 +8,13 @@ class Question(models.Model):
     pub_date = models.DateTimeField(default=timezone.now())
 
     def __str__(self):
-        return "<{0}>".format(self.question_text)
+        return self.question_text
 
 
 class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     choice_text = models.CharField(max_length=200)
-    votes = models.IntegerField(default=0)
+    votes = models.CharField(max_length=20)
 
     def __str__(self):
         return self.choice_text

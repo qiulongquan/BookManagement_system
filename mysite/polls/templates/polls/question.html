@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>question_show</title>
+</head>
+<body>
+<table align=center>
+    <tr>
+        <td>问题</td>
+        <td>提出时间</td>
+    </tr>
+{% for question in question_list.all %}
+    <tr>
+        <td>{{ question.question_text }}</td>
+        <td>{{ question.pub_date }}</td>
+        <td><a href="{% url 'polls:replyQuestion' question.id %}">回复问题</a></td>
+        <td><a href="{% url 'polls:delQuestion' question.id %}">删除问题</a></td>
+    </tr>
+{% endfor %}
+</table>
+<form align=center action="{% url 'polls:addQuestion' %}" method="post" name="addQuestion">
+    {% csrf_token %}
+    <p><span>问题：</span><input type="text"  name="question_text"></p>
+    <input type="submit" value="提出问题">
+</form>
+
+<HR>
+<form align=center action="{% url 'lib:index' %}" method="post" name="return">
+    {% csrf_token %}
+    <input type="submit" value="返回上一层">
+</form>
+</body>
+</html>

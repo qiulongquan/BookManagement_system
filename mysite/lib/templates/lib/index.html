@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <title>welcome</title>
 </head>
-<body>
-<form action="{% url 'lib:detail' %}" method="post" name="detail">
+<body align="center">
+<!--<form action="{% url 'lib:detail' %}" method="post" name="detail">-->
+<form action="{% url 'lib:process' %}" method="post" name="process">
     {% csrf_token %}
 <!--    调用views1.py传递过来的值，然后显示-->
     <p>{{ now }}</p>
@@ -15,7 +16,10 @@
         欢迎回来，邱珑泉的私人书店！
     </tr>
     <tr align="center">
-        <p><button>进入</button></p>
+        <p>
+            <input type="submit" name="button_1" value="进入书店">
+            <input type="submit" name="button_2" value="留言">
+        </p>
     </tr>
 </table>
     <!--<input type="submit" value="进入">-->
