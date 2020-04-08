@@ -1,4 +1,7 @@
 ```
+BookManagement_system
+基于django创建的图书管理系统和polls管理系统，原始版本，没有增加新功能，后续版本都是基于这个版本进行的修改。
+
 有问题参考下面的官方解答
 https://docs.djangoproject.com/ja/3.0/intro/tutorial01/
 
